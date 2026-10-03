@@ -73,8 +73,6 @@ section{max-width:1040px;margin:0 auto;padding:clamp(80px,13vh,140px) clamp(20px
 /* hero */
 .hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center}
 .who{display:flex;align-items:center;gap:16px;margin-bottom:28px}
-.avatar{width:64px;height:64px;border-radius:50%;padding:2px;background:linear-gradient(135deg,var(--coral),var(--rose));flex-shrink:0}
-.avatar div{width:100%;height:100%;border-radius:50%;background:var(--bg) center/cover no-repeat;display:grid;place-items:center;font-family:var(--display);font-weight:600;font-size:1.1rem;color:var(--coral)}
 .status{display:inline-flex;align-items:center;gap:10px;font-size:.85rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 14px;background:rgba(255,154,90,.04)}
 .status i{width:6px;height:6px;border-radius:50%;background:#5BF5A6;box-shadow:0 0 8px #5BF5A6}
 .name{font-family:var(--display);font-weight:800;font-size:clamp(2.8rem,8.5vw,6rem);line-height:1;letter-spacing:-.035em}
@@ -87,6 +85,8 @@ section{max-width:1040px;margin:0 auto;padding:clamp(80px,13vh,140px) clamp(20px
 .caret{display:inline-block;width:2px;height:1em;background:var(--coral);vertical-align:-2px;margin-left:3px;animation:blink 1s steps(1) infinite}
 .hero .fade{opacity:0;animation:in .9s cubic-bezier(.2,.7,.2,1) forwards}
 .hero .d1{animation-delay:.35s}.hero .d2{animation-delay:.5s}.hero .d3{animation-delay:.65s}
+.proof{list-style:none;display:flex;flex-wrap:wrap;gap:10px 28px;margin:22px 0 4px;font-size:.9rem;color:var(--soft)}
+.proof b{font-family:var(--display);font-weight:600;color:var(--coral);margin-right:6px}
 @keyframes in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 .links{margin-top:36px;display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:999px;font-size:.92rem;text-decoration:none;border:1px solid var(--line);background:rgba(255,255,255,.02);color:var(--text);cursor:pointer;font-family:inherit;transition:border-color .25s,box-shadow .25s,color .25s}
@@ -203,12 +203,11 @@ footer{position:relative;z-index:1;display:flex;justify-content:center;gap:20px;
   <!-- HERO -->
   <section class="hero" id="top" data-shape="0">
     <div class="who fade">
-      <!-- To add your photo: put photo.jpg next to index.html. Initials show until then. -->
-      <div class="avatar"><div id="avatar">AK</div></div>
-      <div class="status"><i></i>ML/DL Engineer, New Delhi</div>
+      <div class="status"><i></i>ML/DL Engineer · WESEE, Indian Navy · New Delhi</div>
     </div>
     <h1 class="name"><span class="ln"><span>Ayush</span></span><span class="ln"><span>Kushwaha</span></span></h1>
-    <p class="role fade d1">I build speech, retrieval and vision systems that run in production at WESEE, Indian Navy.</p>
+    <p class="role fade d1">I ship ML that survives production: speech, retrieval and vision systems that are fast, reliable and used every day.</p>
+    <ul class="proof fade d2"><li><b>8+</b> languages transcribed</li><li><b>10M+</b> embeddings served</li><li><b>35%</b> lower latency</li><li><b>Kaggle</b> Silver Medal</li></ul>
     <p class="typed fade d2" aria-live="polite"><span id="typed"></span><span class="caret"></span></p>
     <div class="links fade d3">
       <a class="btn solid" href="#projects">Selected work</a>
@@ -510,8 +509,6 @@ footer{position:relative;z-index:1;display:flex;justify-content:center;gap:20px;
 document.getElementById("yr").textContent = new Date().getFullYear();
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/* avatar: use photo.jpg if it exists */
-(() => { const im = new Image(); im.onload = () => { const a = document.getElementById("avatar"); a.style.backgroundImage = "url(photo.jpg)"; a.textContent = ""; }; im.src = "photo.jpg"; })();
 
 /* typed line */
 (() => {

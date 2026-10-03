@@ -9,7 +9,6 @@ ML/DL engineer portfolio with a WebGL background, built as a single static page.
 - `resume.pdf` : downloadable resume
 - `og-image.png` : link preview image for LinkedIn, WhatsApp, X
 - `.nojekyll` : tells GitHub Pages to serve files as-is
-- `photo.jpg` : optional square profile photo (initials show until you add it)
 
 ## Run locally
 No build step. Open `index.html` in a browser, or serve the folder:
@@ -30,7 +29,6 @@ Then visit http://localhost:8000.
 Every push to `main` redeploys automatically.
 
 ## Customise
-- **Photo:** add a square `photo.jpg` in the root.
 - **Resume:** replace `resume.pdf`, keep the same file name.
 - **Link preview:** after deploying, check it at https://www.opengraph.xyz.
 
